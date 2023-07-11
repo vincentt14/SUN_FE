@@ -1,3 +1,4 @@
+import Consult from "../components/Consult";
 import Hero from "../components/Hero";
 import Package from "../components/Package";
 import Partners from "../components/Partners";
@@ -14,6 +15,7 @@ const HomePage = () => {
       <Portfolio />
       <Testimonials />
       <Partners />
+      <Consult />
     </div>
   );
 };

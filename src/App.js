@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import DashboardPage from "./pages/DashboardPage";
+import Footer from "./components/Footer";
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/dashboard" element={<DashboardPage />} />
         </Routes>
       </main>
+      <Footer />
     </>
   );
 };
