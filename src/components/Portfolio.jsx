@@ -44,7 +44,7 @@ const Portfolio = () => {
             </div>
           ))}
         </div>
-        <CustomButton title="Learn more" style="bg-secondary py-4 px-14" parentStyle="mt-8" />
+        <CustomButton title="Learn more" style="bg-secondary py-5 px-11" parentStyle="mt-8" />
       </div>
     </section>
   );
