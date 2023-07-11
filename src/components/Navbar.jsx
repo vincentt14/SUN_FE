@@ -61,7 +61,7 @@ const Navbar = () => {
                 <ul className="block lg:flex">
                   {links.map((link) => (
                     <li className="group" key={link.label}>
-                      <Link to={link.to} className="font-bold text-primary py-2 mx-4 group-hover:text-secondary">
+                      <Link to={link.to} className="font-bold py-2 mx-4 group-hover:text-secondary">
                         {link.label}
                       </Link>
                     </li>
@@ -78,16 +78,16 @@ const Navbar = () => {
         <div className="fixed z-10 flex items-start justify-center bg-[#fbeeac] w-screen h-screen lg:hidden ">
           <ul className="mt-5 flex flex-col items-center">
             {links.map((link) => (
-              <li className="group my-2" onClick={onHamburgerClick} key={link.label}>
-                <Link to={link.to} className="font-bold text-primary p-2 mx-4 group-hover:text-secondary">
+              <li className="group my-3" onClick={onHamburgerClick} key={link.label}>
+                <Link to={link.to} className="font-bold text-xl p-2 group-hover:text-secondary">
                   {link.label}
                 </Link>
               </li>
             ))}
-            <li className="my-4" onClick={onHamburgerClick}>
+            <li className="my-5" onClick={onHamburgerClick}>
               <CustomButton link={"/"} title={"Contact Us"} style={"bg-secondary"} />
             </li>
-            <li className="my-4" onClick={onHamburgerClick}>
+            <li className="my-5" onClick={onHamburgerClick}>
               <CustomButton link={"/login"} title={"Login"} style={"border-2 border-black"} />
             </li>
           </ul>

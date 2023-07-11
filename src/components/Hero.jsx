@@ -2,7 +2,7 @@ import CustomButton from "./CustomButton";
 
 const Hero = () => {
   return (
-    <>
+    <section>
       <div className="block lg:hidden">
         <div className="bg_hero text-center">
           <div className="container flex flex-col items-center justify-center py-20">
@@ -32,7 +32,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

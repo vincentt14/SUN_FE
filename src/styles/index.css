@@ -6,6 +6,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  @apply text-primary;
 }
 
 .hamburger-line {

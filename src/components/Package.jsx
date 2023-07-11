@@ -142,7 +142,7 @@ const Package = () => {
   ];
 
   return (
-    <div className="container">
+    <section className="container">
       <div className="mt-28 flex flex-col items-center">
         <div className="text-center">
           <p className="text-tertiary mb-3">Complete Package</p>
@@ -169,7 +169,7 @@ const Package = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
