@@ -1,5 +1,6 @@
 import Hero from "../components/Hero";
 import Package from "../components/Package";
+import Portfolio from "../components/Portfolio";
 import Split from "../components/Split";
 
 const HomePage = () => {
@@ -8,6 +9,7 @@ const HomePage = () => {
       <Hero />
       <Package />
       <Split />
+      <Portfolio />
     </div>
   );
 };

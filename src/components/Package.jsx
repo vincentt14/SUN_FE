@@ -161,7 +161,7 @@ const Package = () => {
             </div>
           ))}
         </div>
-        <div className="grid md:grid-cols-4 lg:grid-cols-6 gap-5 mb-16 w-full justify-center">
+        <div className="grid md:grid-cols-4 lg:grid-cols-6 gap-5 w-full justify-center">
           {stacks.map((stack) => (
             <div className="mx-auto mb-5 md:mb-0" key={stack.title}>
               <img src={stack.icon} alt={stack.title} />

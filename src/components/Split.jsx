@@ -15,7 +15,7 @@ const Split = () => {
   ];
 
   return (
-    <section className="bg-primary py-12 mb-10">
+    <section className="bg-primary py-12 mt-28">
       <div className="flex flex-col items-center justify-center">
         <h1 className="max-w-lg text-secondary text-center font-bold text-2xl">Our Progress Comes with a Collaboration Between Creativity, Ideas, and Technology</h1>
         <div className="grid md:grid-cols-3 gap-5 w-full text-center">
