@@ -13,11 +13,11 @@ const App = () => {
     <>
       <Navbar />
       <main>
-        {/* <Routes>
+        <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
-        </Routes> */}
+        </Routes>
       </main>
     </>
   );

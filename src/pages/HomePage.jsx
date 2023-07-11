@@ -1,7 +1,9 @@
+import Hero from "../components/Hero";
+
 const HomePage = () => {
   return (
-    <div className="container mt-60">
-      <h1>Home Padsadsage</h1>
+    <div className="mt-[105px]">
+      <Hero />
     </div>
   );
 };

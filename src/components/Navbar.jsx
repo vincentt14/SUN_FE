@@ -1,6 +1,6 @@
-import react, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import Button from "./Button";
+import CustomButton from "./CustomButton";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -11,12 +11,41 @@ const Navbar = () => {
     setToggle(!toggle);
   };
 
+  const links = [
+    {
+      to: "/",
+      label: "Service",
+    },
+    {
+      to: "/",
+      label: "About",
+    },
+    {
+      to: "/",
+      label: "Portfolio",
+    },
+    {
+      to: "/",
+      label: "Blog",
+    },
+    {
+      to: "/",
+      label: "Carrer",
+    },
+  ];
+
   return (
     <>
       <header className="fixed top-0 left-0 z-10 flex w-full items-center border-b-2 shadow-sm">
         <div className="container">
           <div className="flex items-center justify-between py-6">
-            <div className="px-4" onClick={onHamburgerClick}>
+            <div
+              className="px-4"
+              onClick={() => {
+                setToggle(false);
+                setActive(false);
+              }}
+            >
               <Link to="/">
                 <img src="./asset/logo.jpg" alt="logo" />
               </Link>
@@ -30,33 +59,15 @@ const Navbar = () => {
 
               <nav className="hidden lg:block lg:max-w-full">
                 <ul className="block lg:flex">
-                  <li className="group">
-                    <Link to="/" className="font-bold text-primary py-2 mx-4 group-hover:text-secondary">
-                      Service
-                    </Link>
-                  </li>
-                  <li className="group">
-                    <Link to="/" className="font-bold text-primary py-2 mx-4 group-hover:text-secondary">
-                      About
-                    </Link>
-                  </li>
-                  <li className="group">
-                    <Link to="/" className="font-bold text-primary py-2 mx-4 group-hover:text-secondary">
-                      Portfolio
-                    </Link>
-                  </li>
-                  <li className="group">
-                    <Link to="/" className="font-bold text-primary py-2 mx-4 group-hover:text-secondary">
-                      Blog
-                    </Link>
-                  </li>
-                  <li className="group">
-                    <Link to="/" className="font-bold text-primary py-2 mx-4 group-hover:text-secondary">
-                      Carrer
-                    </Link>
-                  </li>
-                  <Button link={"/"} title={"Contact Us"} style={"bg-secondary"} />
-                  <Button link={"/login"} title={"Login"} style={"border-2 border-black"} />
+                  {links.map((link) => (
+                    <li className="group" key={link.label}>
+                      <Link to={link.to} className="font-bold text-primary py-2 mx-4 group-hover:text-secondary">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                  <CustomButton link={"/"} title={"Contact Us"} style={"bg-secondary"} />
+                  <CustomButton link={"/login"} title={"Login"} style={"border-2 border-black"} />
                 </ul>
               </nav>
             </div>
@@ -64,38 +75,20 @@ const Navbar = () => {
         </div>
       </header>
       {toggle && (
-        <div className="fixed mt-[105px] flex items-start justify-center bg-[#fbeeac] w-full h-full lg:hidden">
+        <div className="fixed z-10 flex items-start justify-center bg-[#fbeeac] w-screen h-screen lg:hidden ">
           <ul className="mt-5 flex flex-col items-center">
-            <li className="group my-2" onClick={onHamburgerClick}>
-              <Link to="/" className="font-bold text-primary p-2 mx-4 group-hover:text-secondary">
-                Service
-              </Link>
-            </li>
-            <li className="group my-2" onClick={onHamburgerClick}>
-              <Link to="/" className="font-bold text-primary p-2 mx-4 group-hover:text-secondary">
-                About
-              </Link>
-            </li>
-            <li className="group my-2" onClick={onHamburgerClick}>
-              <Link to="/" className="font-bold text-primary p-2  mx-4 group-hover:text-secondary">
-                Portfolio
-              </Link>
-            </li>
-            <li className="group my-2" onClick={onHamburgerClick}>
-              <Link to="/" className="font-bold text-primary p-2 mx-4 group-hover:text-secondary">
-                Blog
-              </Link>
-            </li>
-            <li className="group my-2" onClick={onHamburgerClick}>
-              <Link to="/" className="font-bold text-primary p-2 mx-4 group-hover:text-secondary">
-                Carrer
-              </Link>
+            {links.map((link) => (
+              <li className="group my-2" onClick={onHamburgerClick} key={link.label}>
+                <Link to={link.to} className="font-bold text-primary p-2 mx-4 group-hover:text-secondary">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+            <li className="my-4" onClick={onHamburgerClick}>
+              <CustomButton link={"/"} title={"Contact Us"} style={"bg-secondary"} />
             </li>
             <li className="my-4" onClick={onHamburgerClick}>
-              <Button link={"/"} title={"Contact Us"} style={"bg-secondary "} />
-            </li>
-            <li className="my-4" onClick={onHamburgerClick}>
-              <Button link={"/login"} title={"Login"} style={"border-2 border-black"} />
+              <CustomButton link={"/login"} title={"Login"} style={"border-2 border-black"} />
             </li>
           </ul>
         </div>
