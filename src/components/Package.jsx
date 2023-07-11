@@ -7,7 +7,6 @@ import maintenance from "../icons/Maintenance.svg";
 import cms from "../icons/cms.svg";
 import payment from "../icons/Payment.svg";
 import arrow from "../icons/Arrow.svg";
-
 import aws from "../icons/aws.svg";
 import cloud from "../icons/cloud.svg";
 import angular from "../icons/angular.svg";
@@ -28,13 +27,13 @@ const Package = () => {
 
   const onUserHover = (e) => {
     setHover(true);
-    console.log(e.target.id);
-    console.log(e.target);
+    // console.log(e.target.id);
+    // console.log(e.target);
   };
 
   const onUserLeave = () => {
     setHover(false);
-    console.log(hover);
+    // console.log(hover);
   };
 
   const packages = [

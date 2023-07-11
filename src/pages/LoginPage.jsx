@@ -1,12 +1,24 @@
+import axios from "axios";
 import { useState } from "react";
 
 const LoginPage = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("eve.holt@reqres.in");
+  const [password, setPassword] = useState("bebas");
 
-  const onSubmitHandler = (e) => {
+  const onSubmitHandler = async (e) => {
     e.preventDefault();
-    console.log(username, password);
+
+    const data = {
+      email: username,
+      password: password,
+    };
+
+    try {
+      const response = await axios.post("https://reqres.in/api/login", data);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -19,13 +31,13 @@ const LoginPage = () => {
               <div className="my-5">
                 <label>
                   Username :
-                  <input type="text" placeholder="Enter Username" name="uname" required className="ml-4 border p-3 rounded-2xl md:w-[300px]" onChange={(e) => setUsername(e.target.value)} />
+                  <input type="text" placeholder="Enter Username" name="uname" value={username} className="ml-4 border p-3 rounded-2xl md:w-[300px]" onChange={(e) => setUsername(e.target.value)} />
                 </label>
               </div>
               <div className="mb-5">
                 <label>
                   Password :
-                  <input type="text" placeholder="Enter Password" name="pass" required className="ml-4 border p-3 rounded-2xl md:w-[300px]" onChange={(e) => setPassword(e.target.value)} />
+                  <input type="text" placeholder="Enter Password" name="pass" value={password} className="ml-4 border p-3 rounded-2xl md:w-[300px]" onChange={(e) => setPassword(e.target.value)} />
                 </label>
               </div>
               <button type="submit" className="mx-2 my-5">

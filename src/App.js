@@ -1,4 +1,3 @@
-import react, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
@@ -9,8 +8,6 @@ import Footer from "./components/Footer";
 import WA from "./components/WA";
 
 const App = () => {
-  const [loading, setLoading] = useState(false);
-
   return (
     <>
       <WA />
