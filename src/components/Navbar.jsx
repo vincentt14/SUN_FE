@@ -75,7 +75,7 @@ const Navbar = () => {
         </div>
       </header>
       {toggle && (
-        <div className="fixed z-10 flex items-start justify-center bg-[#fbeeac] w-screen h-screen lg:hidden ">
+        <div className="fixed z-10 flex items-start justify-center bg-[#fbeeac] mt-[41px] w-screen h-screen lg:hidden ">
           <ul className="mt-5 flex flex-col items-center">
             {links.map((link) => (
               <li className="group my-3" onClick={onHamburgerClick} key={link.label}>

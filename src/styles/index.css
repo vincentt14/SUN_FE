@@ -37,3 +37,8 @@ body {
   background-image: url("../../public/asset/bg-testi.jpg");
   background-repeat: no-repeat;
 }
+
+.bg_login{
+  background-image: url("../../public/asset/texutre.jpg");
+  background-repeat: no-repeat;
+}

@@ -12,7 +12,7 @@ const Hero = () => {
               <hr className="w-20 h-1.5 bg-secondary my-1 border-none" />
               <p className="text-[22px]">in weeks, not months</p>
             </div>
-            <CustomButton link="/" title="Book now" style="bg-secondary font-semibold py-5 px-11" parentStyle="my-3" />
+            <CustomButton link="/" title="Book now" style="bg-secondary font-semibold py-5 px-16" parentStyle="my-3" />
           </div>
         </div>
       </div>
@@ -25,7 +25,7 @@ const Hero = () => {
               <hr className="w-20 mx-5  h-1.5 bg-secondary my-6 border-none" />
               <p className="text-2xl text_shadow">in weeks, not months</p>
             </div>
-            <CustomButton link="/" title="Book now" style="bg-secondary font-semibold py-5 px-11" parentStyle="my-3" />
+            <CustomButton link="/" title="Book now" style="bg-secondary font-semibold py-5 px-16" parentStyle="my-3" />
           </div>
           <div className="w-full">
             <img src="./asset/Group 81.png" alt="hero" className="ml-auto w-[820px]" />
