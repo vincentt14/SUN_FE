@@ -28,7 +28,7 @@ const Hero = () => {
             <CustomButton link="/" title="Book now" style="bg-secondary font-semibold py-5 px-16" parentStyle="my-3" />
           </div>
           <div className="w-full">
-            <img src="./asset/Group 81.png" alt="hero" className="right-0  ml-auto" />
+            <img src="./asset/Group 81.png" alt="hero" className="ml-auto w-[820px]" />
           </div>
         </div>
       </div>

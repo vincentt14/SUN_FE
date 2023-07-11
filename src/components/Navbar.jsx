@@ -36,7 +36,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 z-10 flex w-full items-center border-b-2 shadow-sm">
+      <header className="fixed top-0 left-0 z-10 flex w-full items-center border-b-2 shadow-sm bg-white">
         <div className="container">
           <div className="flex items-center justify-between py-6">
             <div
