@@ -1,13 +1,17 @@
+import { useContext } from "react";
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import UserContext from "../context/UserContext";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("eve.holt@reqres.in");
   const [password, setPassword] = useState("bebas");
+  const { setUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
-
     const data = {
       email: username,
       password: password,
@@ -15,7 +19,8 @@ const LoginPage = () => {
 
     try {
       const response = await axios.post("https://reqres.in/api/login", data);
-      console.log(response);
+      setUser(response.data.token);
+      navigate("/dashboard");
     } catch (error) {
       console.log(error);
     }

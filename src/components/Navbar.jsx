@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import CustomButton from "./CustomButton";
+import UserContext from "../context/UserContext";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [active, setActive] = useState(false);
+  const { user } = useContext(UserContext);
 
   const onHamburgerClick = () => {
     setActive(!active);
@@ -67,7 +69,7 @@ const Navbar = () => {
                     </li>
                   ))}
                   <CustomButton link={"/"} title={"Contact Us"} style={"bg-secondary"} />
-                  <CustomButton link={"/login"} title={"Login"} style={"border-2 border-black"} />
+                  {user ? <CustomButton link={"/dashboard"} title={"Dashboard"} style={"border-2 border-black"} /> : <CustomButton link={"/login"} title={"Login"} style={"border-2 border-black"} />}
                 </ul>
               </nav>
             </div>
@@ -87,9 +89,15 @@ const Navbar = () => {
             <li className="my-5" onClick={onHamburgerClick}>
               <CustomButton link={"/"} title={"Contact Us"} style={"bg-secondary"} />
             </li>
-            <li className="my-5" onClick={onHamburgerClick}>
-              <CustomButton link={"/login"} title={"Login"} style={"border-2 border-black"} />
-            </li>
+            {user ? (
+              <li className="my-5" onClick={onHamburgerClick}>
+                <CustomButton link={"/dashboard"} title={"Dashboard"} style={"border-2 border-black"} />
+              </li>
+            ) : (
+              <li className="my-5" onClick={onHamburgerClick}>
+                <CustomButton link={"/login"} title={"Login"} style={"border-2 border-black"} />
+              </li>
+            )}
           </ul>
         </div>
       )}
